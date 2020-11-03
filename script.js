@@ -27,6 +27,10 @@ $(document).ready(function(){
       calculator.displayValue += dot;
     }
   }
+
+  function postCalculation(result){
+    console.log(result);
+  }
   
   function handleOperator(nextOperator) {
     const { firstOperand, displayValue, operator } = calculator
@@ -103,7 +107,16 @@ $(document).ready(function(){
       }*/
       handleOperator(this.value);
       updateDisplay();
-      
+      if(this.classList.contains('equal-sign')){
+        let data = calculator.idValue+calculator.displayValue;
+        $.ajax({                                           //Sending AJAX POST request
+          type: "POST",
+          url: "calculator.php",
+          data: data,
+          success: postCalculation,
+          dataType: "text" 
+      });
+      }
     }
     else if (this.classList.contains('decimal')) {
       inputDecimal(this.value);

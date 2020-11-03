@@ -1,26 +1,22 @@
-<?php
-    $equation = array_keys($_POST)[0];
-    $myArray = str_split($equation);
+<?php include "db.inc"; 
 
-    
-    $operants = array();
-    
-    $operations = array();
-    $str = "";
+    $key = array_keys($_POST)[0];
+    $value = $_POST[$key];
+    $calculation = $key."=".$value;
+    //echo $calculation;
 
-    foreach($myArray as $character){
-        
-        if ($character === '_' || $character === '-' || $character === '*' || $character === '/'){
-            array_push($operants, $str);
-            array_push($operations, $character);
-            $str = "";
-        }
-        else{
-            $str .= $character;
-        }
+    $db = new CalculatorDB();
+    if (!$db) {
+        echo $db->lastErrorMsg();
     }
-    array_push($operants, $str);
 
+    $sql = "INSERT INTO History(Equation) VALUES ('$calculation')";
+    $db->query($sql);
 
-    var_dump($operants);
+    $fetch = "SELECT * FROM History";
+    $results = $db->query($fetch);
+    while ($row = $results->fetchArray()) {
+        var_dump($row);
+    }
+    $db->close();
 ?>
