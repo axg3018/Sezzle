@@ -20,10 +20,10 @@ body{
     border: 1px solid #585858;
     border-radius: 5px;
     position: relative;
-    left: 25%;
-    width: max-content;
+    width: 100%;
     background-color: #252525 ;
   }
+
 
   #id-screen{
     width: 100%;

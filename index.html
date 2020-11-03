@@ -14,7 +14,7 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="calculator card">
+                <div class="calculator card col-12 col-md-8">
                     <input type="text" id="id-screen" value="" disabled />
                     <input type="text" id="calculator-screen" value="" disabled />
                 
@@ -50,11 +50,18 @@
                     
                 </div>
                 
-            </div>
-            <div class="row" id = "row">
-                <table class="table table-dark table-sm">
+            
+                <div class="col-12 col-md-4" id = "row">
+                    <table class="table table-dark table-sm">
+                        <thead>
+                            <tr>
+                              <th scope="col">History</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
                     
-                </table>
+                    </table>
+                </div>
             </div>
         </div>
         

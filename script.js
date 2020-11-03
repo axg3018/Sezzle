@@ -1,4 +1,12 @@
 $(document).ready(function(){
+
+  setInterval(function() {
+    $.ajax({                                           //Sending AJAX POST request
+      type: "GET",
+      url: "table.php",
+      success: postCalculation
+    });
+  }, 5000);
   
   const calculator = {
     displayValue: '0',
@@ -29,7 +37,7 @@ $(document).ready(function(){
   }
 
   function postCalculation(result){
-    console.log(result);
+    $('tbody').html(result);
   }
   
   function handleOperator(nextOperator) {
@@ -115,7 +123,7 @@ $(document).ready(function(){
           data: data,
           success: postCalculation,
           dataType: "text" 
-      });
+        });
       }
     }
     else if (this.classList.contains('decimal')) {
