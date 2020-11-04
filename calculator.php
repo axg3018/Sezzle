@@ -1,12 +1,10 @@
 <?php include "db.inc"; 
 
-    $key = array_keys($_POST)[0];
     
-    $value = $_POST[$key];
-    $key = str_replace('_', '+', $key);
-    $calculation = $key."=".$value;
-
-    //echo $calculation;
+    
+    $calculation = $_POST["equation"];
+    $calculation= str_replace(' ', '+', $calculation);
+    
 
     $db = new CalculatorDB();
     if (!$db) {
