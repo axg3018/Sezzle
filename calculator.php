@@ -25,12 +25,6 @@
         $db->query($sql);
     }
 
-    $fetch = "SELECT * FROM History ORDER BY ID DESC";
-    $results = $db->query($fetch);
-    $table = "";
-    while($row = $results->fetchArray(SQLITE3_ASSOC) ) {
-        $table .= "<tr><td>".$row["Equation"]."</td></tr>";
-    }
-    echo $table;    
+    
     $db->close();
 ?>

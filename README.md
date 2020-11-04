@@ -12,4 +12,4 @@ Further I used PHP for backend. When a user submits a calculation by clicking on
 
 ## Running the application
 
-[Go to URL](https://sezzle-calculator.000webhostapp.com/) or deploy the code on local PHP server.
+[Go to URL](https://sezzle-calculator.000webhostapp.com/) or deploy the code on local PHP server. [Go to init.php](https://sezzle-calculator.000webhostapp.com/init.php) to reset the database.

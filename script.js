@@ -156,7 +156,6 @@ $(document).ready(function(){
           type: "POST",
           url: "calculator.php",
           data: data,
-          success: updateTable,
           dataType: "text" 
         });
       }

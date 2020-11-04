@@ -1,9 +1,9 @@
 <?php include "db.inc"; 
-    // The Users database
+    // The Calculator database
    
     
  
-    // Instantiate the Users database
+    // Instantiate the Calculator database
     $db = new CalculatorDB();
     if (!$db) {
         echo $db->lastErrorMsg();
