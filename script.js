@@ -152,6 +152,8 @@ $(document).ready(function(){
       // if operator is equal sign
       if(this.classList.contains('equal-sign')){
         let data = "equation="+calculator.idValue+calculator.displayValue;
+        data.replace(".", "d");
+        console.log(data);
         $.ajax({                                           //Sending AJAX POST request
           type: "POST",
           url: "calculator.php",

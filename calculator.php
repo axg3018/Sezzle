@@ -4,6 +4,7 @@
     
     $calculation = $_POST["equation"];
     $calculation= str_replace(' ', '+', $calculation);
+    $calculation= str_replace('d', '.', $calculation);
     
 
     $db = new CalculatorDB();
